@@ -5,6 +5,9 @@ import structure.TreeReBuilder;
 
 import java.util.*;
 
+import static structure.TreeNode.depthFirstSearch;
+import static structure.TreeNode.printTreeByLevel;
+
 /**
  * Created by liumian on 2017/3/24.
  */
@@ -31,60 +34,18 @@ public class TreeReBuilderTest {
         inOrder.add(new TreeNode(3));
         inOrder.add(new TreeNode(7));
 
-        TreeReBuilder rereBuilder = new TreeReBuilder();
+        TreeReBuilder reBuilder = new TreeReBuilder();
 
-        TreeNode root = rereBuilder.rebuild(preOrder, inOrder);
+        TreeNode root = reBuilder.rebuild(preOrder, inOrder);
         printTreeByLevel(root);
         System.out.println("this is 分割线-----------");
-        dsf(root);
-
-    }
-
-    /**
-     * 层序遍历
-     * @param root
-     */
-    public static void printTreeByLevel(TreeNode root) {
-
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-        while (!queue.isEmpty()) {
-            TreeNode node = queue.poll();
-            if (node.left != null) {
-                queue.add(node.left);
-            }
-
-            if (node.right != null) {
-                queue.add(node.right);
-            }
-
-            System.out.println(node.value);
-
-        }
+        depthFirstSearch(root);
 
     }
 
 
-    /**
-     * 深度优先遍历
-     * @param root
-     */
-    public static void dsf(TreeNode root) {
 
-        Stack<TreeNode> stack = new Stack<>();
 
-        stack.push(root);
 
-        while (!stack.isEmpty()) {
-            TreeNode node = stack.pop();
-            System.out.println(node.value);
-            if (node.right != null) {
-                stack.push(node.right);
-            }
-            if (node.left != null) {
-                stack.push(node.left);
-            }
-        }
-    }
 
 }
