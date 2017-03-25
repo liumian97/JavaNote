@@ -1,8 +1,9 @@
-package structure.test;
+package structure.tree.test;
 
-import structure.CommonNodeFinder;
-import structure.TreeNode;
-import structure.TreeReBuilder;
+
+import structure.tree.CommonNodeFinder;
+import structure.tree.TreeNode;
+import structure.tree.TreeReBuilder;
 
 /**
  * Created by liumian on 2017/3/25.

@@ -1,4 +1,4 @@
-package structure;
+package structure.tree;
 
 /**
  * 寻找二叉树最低公共节点

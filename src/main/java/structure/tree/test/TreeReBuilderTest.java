@@ -1,12 +1,12 @@
-package structure.test;
+package structure.tree.test;
 
-import structure.TreeNode;
-import structure.TreeReBuilder;
+import structure.tree.TreeNode;
+import structure.tree.TreeReBuilder;
 
 import java.util.*;
 
-import static structure.TreeNode.depthFirstSearch;
-import static structure.TreeNode.printTreeByLevel;
+import static structure.tree.TreeNode.depthFirstSearch;
+import static structure.tree.TreeNode.printTreeByLevel;
 
 /**
  * Created by liumian on 2017/3/24.
