@@ -11,7 +11,7 @@ public class TreeNode {
 
     public int value;
 
-    public TreeNode left,right;
+    public TreeNode left, right;
 
 
     public TreeNode(int value) {
@@ -36,10 +36,14 @@ public class TreeNode {
 
     /**
      * 层序遍历
+     *
      * @param root
      */
     public static void printTreeByLevel(TreeNode root) {
 
+        if (root == null) {
+            return;
+        }
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         while (!queue.isEmpty()) {
@@ -61,10 +65,14 @@ public class TreeNode {
 
     /**
      * 深度优先遍历
+     *
      * @param root
      */
     public static void depthFirstSearch(TreeNode root) {
 
+        if (root == null) {
+            return;
+        }
         Stack<TreeNode> stack = new Stack<>();
 
         stack.push(root);

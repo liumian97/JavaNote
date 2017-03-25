@@ -36,7 +36,12 @@ public class TreeReBuilderTest {
 
         TreeReBuilder reBuilder = new TreeReBuilder();
 
-        TreeNode root = reBuilder.rebuild(preOrder, inOrder);
+        TreeNode root = null;
+        try {
+            root = reBuilder.rebuild(preOrder, inOrder);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         printTreeByLevel(root);
         System.out.println("this is 分割线-----------");
         depthFirstSearch(root);

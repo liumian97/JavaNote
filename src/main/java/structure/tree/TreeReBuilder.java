@@ -12,14 +12,20 @@ import java.util.List;
  */
 public class TreeReBuilder {
 
-    public TreeNode rebuild(List<TreeNode> preOrder, List<TreeNode> inOrder) {
+    public TreeNode rebuild(List<TreeNode> preOrder, List<TreeNode> inOrder) throws Exception {
 
         if (preOrder == null || preOrder.size() == 0) {
             return null;
         }
 
         TreeNode root = preOrder.get(0);
-        int indexOfRoot = inOrder.indexOf(root);
+        int indexOfRoot;
+        try{
+
+            indexOfRoot = inOrder.indexOf(root);
+        }catch (Exception e){
+            throw new Exception("输入的前序、后序遍历的数据有误，不能重构二叉树");
+        }
 
         preOrder.remove(0);
 
@@ -60,7 +66,14 @@ public class TreeReBuilder {
 
         TreeReBuilder reBuilder = new TreeReBuilder();
 
-        return reBuilder.rebuild(preOrder, inOrder);
+        TreeNode root = null;
+        try {
+            root = reBuilder.rebuild(preOrder, inOrder);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return root;
     }
 
 }
