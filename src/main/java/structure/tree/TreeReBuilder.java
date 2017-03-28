@@ -4,26 +4,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
  * rebuild binary tree by preOrder and inOrder
  * postOrder will be support later
- *
+ * <p>
  * Created by liumian on 2017/3/24.
  */
 public class TreeReBuilder {
 
     public TreeNode rebuild(List<TreeNode> preOrder, List<TreeNode> inOrder) throws Exception {
 
-        if (preOrder == null || preOrder.size() == 0) {
+        if (preOrder == null || inOrder == null) {
             return null;
         }
 
-        TreeNode root = preOrder.get(0);
-        int indexOfRoot;
-        try{
+        if (preOrder.size() == 0 && inOrder.size() != 0) {
+            throw new Exception("输入的前序、后序遍历的数据有误，不能重构二叉树");
+        }
 
-            indexOfRoot = inOrder.indexOf(root);
-        }catch (Exception e){
+        TreeNode root = preOrder.get(0);
+        int indexOfRoot = inOrder.indexOf(root);
+
+
+        if (indexOfRoot == -1) {
             throw new Exception("输入的前序、后序遍历的数据有误，不能重构二叉树");
         }
 
@@ -44,36 +46,5 @@ public class TreeReBuilder {
 
     }
 
-
-    public TreeNode buildTestTree(){
-        List<TreeNode> preOrder = new ArrayList<>();
-        preOrder.add(new TreeNode(1));
-        preOrder.add(new TreeNode(2));
-        preOrder.add(new TreeNode(4));
-        preOrder.add(new TreeNode(5));
-        preOrder.add(new TreeNode(6));
-        preOrder.add(new TreeNode(3));
-        preOrder.add(new TreeNode(7));
-
-        List<TreeNode> inOrder = new ArrayList<>();
-        inOrder.add(new TreeNode(4));
-        inOrder.add(new TreeNode(2));
-        inOrder.add(new TreeNode(6));
-        inOrder.add(new TreeNode(5));
-        inOrder.add(new TreeNode(1));
-        inOrder.add(new TreeNode(3));
-        inOrder.add(new TreeNode(7));
-
-        TreeReBuilder reBuilder = new TreeReBuilder();
-
-        TreeNode root = null;
-        try {
-            root = reBuilder.rebuild(preOrder, inOrder);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return root;
-    }
 
 }

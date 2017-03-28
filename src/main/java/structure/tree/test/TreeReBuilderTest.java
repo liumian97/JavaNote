@@ -23,6 +23,7 @@ public class TreeReBuilderTest {
         preOrder.add(new TreeNode(5));
         preOrder.add(new TreeNode(6));
         preOrder.add(new TreeNode(3));
+        preOrder.add(new TreeNode(10));
         preOrder.add(new TreeNode(7));
 
         List<TreeNode> inOrder = new ArrayList<>();
@@ -33,6 +34,7 @@ public class TreeReBuilderTest {
         inOrder.add(new TreeNode(1));
         inOrder.add(new TreeNode(3));
         inOrder.add(new TreeNode(7));
+        inOrder.add(new TreeNode(10));
 
         TreeReBuilder reBuilder = new TreeReBuilder();
 
@@ -46,6 +48,40 @@ public class TreeReBuilderTest {
         System.out.println("this is 分割线-----------");
         depthFirstSearch(root);
 
+    }
+
+
+    public static TreeNode buildTestTree(){
+        List<TreeNode> preOrder = new ArrayList<>();
+        preOrder.add(new TreeNode(1));
+        preOrder.add(new TreeNode(2));
+        preOrder.add(new TreeNode(4));
+        preOrder.add(new TreeNode(5));
+        preOrder.add(new TreeNode(6));
+        preOrder.add(new TreeNode(3));
+        preOrder.add(new TreeNode(7));
+        preOrder.add(new TreeNode(10));
+
+        List<TreeNode> inOrder = new ArrayList<>();
+        inOrder.add(new TreeNode(4));
+        inOrder.add(new TreeNode(2));
+        inOrder.add(new TreeNode(6));
+        inOrder.add(new TreeNode(5));
+        inOrder.add(new TreeNode(1));
+        inOrder.add(new TreeNode(3));
+        inOrder.add(new TreeNode(10));
+        inOrder.add(new TreeNode(7));
+
+        TreeReBuilder reBuilder = new TreeReBuilder();
+
+        TreeNode root = null;
+        try {
+            root = reBuilder.rebuild(preOrder, inOrder);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return root;
     }
 
 

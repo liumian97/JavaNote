@@ -89,23 +89,24 @@ public class Fibonacci {
     public static void main(String[] args) {
         Fibonacci fibonacci = new Fibonacci();
 
-        int n = 50;
+        int n = 100;
         System.out.println("计算:"+n+"项斐波那契数列");
 
         long start = System.nanoTime();
+        System.out.println("无重复递归:");
 
         System.out.println(fibonacci.f(n, 0, 0, 0));
-
         long stamp1 = System.nanoTime();
-        System.out.println("无重复递归用时(nano)：" + (stamp1 - start));
+        System.out.println("归用时(nano)：" + (stamp1 - start));
 
+        System.out.println("重复递归:");
         System.out.println(fibonacci.f(n));
 
         long stamp2 = System.nanoTime();
 
         System.out.println("重复递归用时(nano)：" + (stamp2 - stamp1));
 
-
+        System.out.println("循环方式:");
         System.out.println(fibonacci.fByLoop(n));
 
         long end = System.nanoTime();
