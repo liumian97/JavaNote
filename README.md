@@ -8,6 +8,7 @@
 2. [快速排序](https://github.com/liumian97/JavaNote/blob/master/src/main/java/algorithm/sort/insert/InsertSort.java)
 3. [直接插入排序](https://github.com/liumian97/JavaNote/blob/master/src/main/java/algorithm/sort/quick/QuickSort.java)
 4. [斐波那契数列三种实现](https://github.com/liumian97/JavaNote/blob/master/src/main/java/algorithm/Fibonacci.java)
+5. [KMP字符串匹配算法](https://github.com/liumian97/JavaNote/blob/master/src/main/java/algorithm/KMP.java)
 
 ## 常用数据结构
 
